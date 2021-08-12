@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package blackjack;
 
 /**
@@ -10,16 +6,36 @@ package blackjack;
  * @author dabro
  */
 public class Player {
-    private String playerID;
+    private String name;
+    private int playerTotal;
+    int count = 0;
+    
+    public Player(String name){
+        this.name = name;
+    }
+    
+    public Player(){
+        
+    }
+    
+    public void setPlayerTotal(int playerTotal){
+        this.playerTotal = playerTotal;
+    }
+     
+    public void playerCount(){
+        System.out.println(playerTotal + " total players");
+    }
     
     public void play(){
         
     }
     
-    public String Player(String name){
-        
-    }
     
+    
+    public String getName(){
+        return name;
+    }
+    /*
     public boolean moreCards(){
         
     }
@@ -31,4 +47,5 @@ public class Player {
     public void showHand(){
         
     }
+*/
 }
