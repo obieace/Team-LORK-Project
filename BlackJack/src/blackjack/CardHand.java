@@ -7,22 +7,42 @@ package blackjack;
  * @author srinivsi, 2020.
  */
 
-public class CardHand {
+public class CardHand extends BlackJack {
 
         private int handSize = 52;
-	public Card[] cards = new Card[handSize];
-      
-        public void generateHand()
-        {
-                int countCards = 0;
-		for(Card.Suit s: Card.Suit.values())
-                {
-                    for(Card.Value v: Card.Value.values())
-                    {
-                        cards[countCards] = (new Card(s,v));
-                        countCards++;
+        public CardHand [][] hand = new CardHand [4][11];
+        
+        Player p1 = new Player();
+        private Suit suit;
+        private Value value;
+        private int playerNum;
+        
+        public CardHand(Suit suit, Value value) {
+            this.suit = suit;
+            this.value = value;
+        }
+        
+        public CardHand(){
+            
+        }
+        
+        public void showHand() {
+            for (int i = 0; i < hand.length; i++){
+                    for (int j = 0; j < hand[i].length; j++){
+                        if (p1.player[i] != null){
+                            System.out.println(hand[0][j].getValue() + " of " + hand[0][i].getSuit());
+                        }
                     }
-                }//end outter for
-        }//end method
+            }
+        }
+        
+        public Suit getSuit(){
+            return suit;
+        }
+        
+        public Value getValue(){
+            return value;
+        }
+        
 
 }
